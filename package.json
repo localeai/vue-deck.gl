@@ -1,0 +1,65 @@
+{
+  "name": "vue-deckgl",
+  "version": "1.0.0",
+  "description": "",
+  "author": {
+    "name": "Musthaq Ahamad",
+    "email": "musthu.gm@gmail.com",
+    "url": "https://haxzie.com"
+  },
+  "private": false,
+  "keywords": [
+    "vuejs",
+    "deckgl",
+    "visualization",
+    "deck.gl",
+    "mapbox"
+  ],
+  "main": "dist/vue-deckgl.ssr.js",
+  "browser": "dist/vue-deckgl.esm.js",
+  "module": "dist/vue-deckgl.esm.js",
+  "unpkg": "dist/vue-deckgl.min.js",
+  "files": [
+    "dist/*",
+    "src/**/*.vue"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve dev/serve.js",
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@deck.gl/core": "^8.3.11",
+    "@rollup/plugin-alias": "^2.2.0",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-replace": "^2.3.2",
+    "@vue/cli-plugin-babel": "^4.3.1",
+    "@vue/cli-service": "^4.3.1",
+    "cross-env": "^7.0.2",
+    "minimist": "^1.2.5",
+    "rollup": "^2.7.3",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-vue": "^5.1.6",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.11",
+    "@deck.gl/core": "^8.3.11"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/localeai/vue-deckgl/issues"
+  },
+  "homepage": "https://github.com/localeai/vue-deckgl"
+}
