@@ -1,6 +1,6 @@
 {
   "name": "vue-deck.gl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "author": {
     "name": "Musthaq Ahamad",
@@ -59,7 +59,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/localeai/vue-deckgl/issues"
+    "url": "https://github.com/localeai/vue-deck.gl/issues"
   },
-  "homepage": "https://github.com/localeai/vue-deckgl"
+  "homepage": "https://github.com/localeai/vue-deck.gl"
 }
