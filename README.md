@@ -120,7 +120,7 @@ export default {
     };
   },
   computed: {
-    layers() {
+    layers  () {
       const paths = new PathLayer({
         id: "path-layer",
         data: this.pathData,
