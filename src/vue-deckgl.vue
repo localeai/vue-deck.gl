@@ -61,6 +61,14 @@ export default {
       type: Array,
       default: () => [],
     },
+    /**
+     * Disables the context menu on right click
+     * 
+     */
+    disableContextMenu: {
+      type: Boolean,
+      default: false
+    }
   },
   methods: {
     /**
@@ -93,6 +101,11 @@ export default {
         effects: this.effects,
       });
     },
+    handleContextMenu(e) {
+      if (this.handleContextMenu) {
+        e.preventDefault();
+      }
+    }
   },
   watch: {
     /**
@@ -145,7 +158,7 @@ export default {
     <slot name="background"></slot>
     <!-- Normal slots, which will always be displayed on the background of the visualization/deck instance -->
     <slot></slot>
-    <canvas id="deck-canvas" ref="canvas"></canvas>
+    <canvas id="deck-canvas" ref="canvas" @contextmenu="handleContextMenu"></canvas>
     <!-- To be displayed on the foreground of the visualization/deck instance -->
     <slot name="foreground"></slot>
   </div>
