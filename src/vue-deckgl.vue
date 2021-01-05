@@ -102,7 +102,7 @@ export default {
       });
     },
     handleContextMenu(e) {
-      if (this.handleContextMenu) {
+      if (this.disableContextMenu) {
         e.preventDefault();
       }
     }
