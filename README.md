@@ -196,3 +196,37 @@ export default {
 </style>
 
 ```
+
+### Using with multiple map and deck.gl overlays 
+```javascript
+
+<template>
+  <div class="deck-container" ref="deckContainerRef">
+    <v-deckgl
+      :layers="layers"
+      :viewState="viewState"
+      :disableContextMenu="true"
+      :cursor="cursor"
+      :controller="{
+        doubleClickZoom: false,
+        type: MapController,
+        scrollZoom: true,
+      }"
+      @click="(info, event) => $emit('onClick', info, event)"
+      @drag="(info, event) => $emit('onDrag', info, event)"
+      @onDragStart="(info, event) => $emit('onDragStart', info, event)"
+      @onDragEnd="(info, event) => $emit('onDragEnd', info, event)"
+      @view-state-change="(viewState) => updateViewState(viewState)"
+    >
+      <!-- Base map -->
+      <template v-slot:background>
+        <div id="base-map" ref="map"></div>
+      </template>
+      <!-- Map Labels -->
+      <template v-slot:foreground>
+        <div id="foreground-map" ref="fgmap" v-show="showMapLabels"></div>
+      </template>
+    </v-deckgl>
+  </div>
+</template>
+```
