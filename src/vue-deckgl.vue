@@ -46,11 +46,18 @@ export default {
       required: true,
     },
     /**
+     * Prop to apply cursor styles
+     */
+    cursor: {
+      type: String,
+      default: "default",
+    },
+    /**
      * Options for viewport interactivity, e.g. pan, rotate and zoom with mouse, touch and keyboard.
      * Defaults to ture to use builtin map interactions
      */
     controller: {
-      type: Boolean,
+      type: [Boolean, Object],
       default: true,
     },
     /**
@@ -95,7 +102,16 @@ export default {
           this.$emit("click", { info, event });
         },
         onDrag: (info, event) => {
-          this.$emit("on-drag", { info, event });
+          this.$emit("drag", { info, event });
+        },
+        onDragStart: (info, event) => {
+          this.$emit("onDragStart", { info, event })
+        },
+        onDragEnd: (info, event) => {
+          this.$emit("onDragEnd", { info, event });
+        },
+        getCursor: ({ isDragging }) => {
+          return (isDragging ? "grabbing" :  this.cursor || "grab");
         },
         layers: layers,
         effects: this.effects,
