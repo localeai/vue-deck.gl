@@ -150,7 +150,7 @@ export default {
         pitch: viewState.pitch,
       });
     },
-    hnadleClick({ event, info }) {
+    handleClick({ event, info }) {
 
     }
   },
